@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     procps \
     libxslt1-dev \
     libonig-dev \
+    git \
     acl
 
 RUN docker-php-ext-install \

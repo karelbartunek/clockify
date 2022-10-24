@@ -1,0 +1,17 @@
+{
+    "name": "karelbartunek/clockify",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Karelbartunek\\Clockify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karel Bartunek"
+        }
+    ],
+    "require": {
+        "symfony/console": "^6.1"
+    }
+}
