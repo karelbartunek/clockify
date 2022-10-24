@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  php:
+    build:
+      context: ./php
+      args:
+        TIMEZONE: ${TIMEZONE}
+    env_file:
+      - .env
+    volumes:
+      - ../:/var/www/clockify/
