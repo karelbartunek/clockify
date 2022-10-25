@@ -1,5 +1,10 @@
 # Clockify export
 
+## Nastavení .envů
+
+- z ./.docker/.env.example vytvořit ./.docker/.env a nastavit v něm vlastní hodnoty
+- z ./.env.example vytvořit ./.env.local a doplnit hodnoty podle předchozího envu z ./.docker/
+
 ## Spuštění dockeru
 
 ```shell
