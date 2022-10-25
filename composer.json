@@ -4,7 +4,15 @@
     "autoload": {
         "psr-4": {
             "KarelBartunek\\Clockify\\": "src/"
-        }
+        },
+        "exclude-from-classmap": [
+            "JDecool\\Clockify\\Api\\User\\User",
+            "JDecool\\Clockify\\Model\\TimeEntryDtoImpl"
+        ],
+        "files": [
+            ".hotfix/JDecool/Clockify/Api/User/User.php",
+            ".hotfix/JDecool/Clockify/Model/TimeEntryDtoImpl.php"
+        ]
     },
     "authors": [
         {
