@@ -9,12 +9,14 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     libonig-dev \
     git \
+    unzip \
+    zlib1g-dev \
+    libzip-dev \
     acl
 
 RUN docker-php-ext-install \
-    xsl intl opcache mbstring
+    xsl intl opcache mbstring pdo_mysql
 
-# Set timezone
 RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} > /etc/timezone \
     && printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/conf.d/tzone.ini \
     && "date"

@@ -10,3 +10,41 @@ services:
       - .env
     volumes:
       - ../:/var/www/clockify/
+    networks:
+      - clockify_network
+
+  db:
+    image: mysql:8.0.23
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "db_clockify:/var/lib/mysql"
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - 3306:3306
+    networks:
+      - clockify_network
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8088:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+    restart: always
+    depends_on:
+      - "db"
+    networks:
+      - clockify_network
+
+volumes:
+  db_clockify:
+
+networks:
+  clockify_network:

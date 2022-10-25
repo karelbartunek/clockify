@@ -1,0 +1,20 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    clockify_apikey: '%env(CLOCKIFY_API_KEY)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $clockifyApiKey: '%clockify_apikey%'
+
+    KarelBartunek\Clockify\:
+        resource: '../src/'
+        exclude:
+            - '../src/Domain/Entity'
+            - '../src/Kernel.php'

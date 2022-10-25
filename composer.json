@@ -3,7 +3,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Karelbartunek\\Clockify\\": "src/"
+            "KarelBartunek\\Clockify\\": "src/"
         }
     },
     "authors": [
@@ -12,6 +12,23 @@
         }
     ],
     "require": {
-        "symfony/console": "^6.1"
+        "symfony/console": "^6.1",
+        "symfony/yaml": "^6.1",
+        "symfony/config": "^6.1",
+        "symfony/dependency-injection": "^6.1",
+        "jdecool/clockify-api": "dev-master",
+        "symfony/debug": "^4.4",
+        "symfony/orm-pack": "^2.2",
+        "symfony/runtime": "^6.1",
+        "symfony/dotenv": "^6.1",
+        "doctrine/doctrine-migrations-bundle": "^3.2"
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.47"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
     }
 }

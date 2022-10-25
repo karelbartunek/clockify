@@ -2,3 +2,6 @@
 
 /vendor/
 /.env
+/var
+/.env.local
+/.docker/.env
