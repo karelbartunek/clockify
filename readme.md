@@ -33,3 +33,6 @@ docker exec -it docker_php_1 bash
 php bin/console app:clockify
 ```
 
+## Vygenerovaný soubor
+
+`var/results.txt`
