@@ -1,0 +1,21 @@
+includes:
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-symfony/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-doctrine/extension.neon
+
+parameters:
+    level: 5
+
+    tmpDir: %currentWorkingDirectory%/var/cache/phpstan
+
+    paths:
+        - %currentWorkingDirectory%/src
+
+    excludes_analyse:
+
+    symfony:
+        container_xml_path: %currentWorkingDirectory%/var/cache/dev/KarelBartunek_Clockify_KernelDevDebugContainer.xml
+
+    doctrine:
+        repositoryClass: Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository
+
+    reportUnmatchedIgnoredErrors: false

@@ -1,0 +1,29 @@
+# https://github.com/EdgedesignCZ/phpqa/blob/master/.phpqa.yml
+phpqa:
+    analyzedDirs: ./src
+    buildDir: ./var/qa/build
+    tools:
+        - phpcs:0
+        - phpstan:0
+        - phpmd:0
+        - security-checker:0
+    verbose: true
+    report: true
+
+phpcs:
+    standard: phpcs.xml
+    ignoreWarnings: false
+    reports:
+        file:
+            info: phpcs-info.txt
+            full: phpcs-full.txt
+            checkstyle: ./var/qa/build/checkstyle.xml
+
+phpstan:
+    # https://github.com/phpstan/phpstan#configuration
+    standard: phpstan.neon
+    level: 5
+    memoryLimit: 2G
+
+phpmd:
+    standard: phpmd.xml

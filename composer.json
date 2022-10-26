@@ -29,14 +29,22 @@
         "symfony/orm-pack": "^2.2",
         "symfony/runtime": "^6.1",
         "symfony/dotenv": "^6.1",
-        "doctrine/doctrine-migrations-bundle": "^3.2"
+        "doctrine/doctrine-migrations-bundle": "^3.2",
+        "nette/neon": "^3.3"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.47"
+        "symfony/maker-bundle": "^1.47",
+        "edgedesign/phpqa": "^1.26",
+        "phpstan/phpstan-symfony": "^1.2",
+        "enlightn/security-checker": "^1.10",
+        "phpstan/phpstan": "^1.8",
+        "phpstan/phpstan-doctrine": "^1.3",
+        "slevomat/coding-standard": "^8.6"
     },
     "config": {
         "allow-plugins": {
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
