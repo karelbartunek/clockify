@@ -45,7 +45,7 @@ final class Export
     private function buildHeader(DateTimeImmutable $dateTime, int $recordsCount): string
     {
         $dayOfWeek = $dateTime->format('l');
-        $date =  $dateTime->format('Y-m-d');
+        $date = $dateTime->format('Y-m-d');
 
         return "Time entries for {$dayOfWeek} ({$date}): {$recordsCount} \r\n";
     }

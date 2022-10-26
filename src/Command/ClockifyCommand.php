@@ -63,6 +63,7 @@ class ClockifyCommand extends Command
      * @param OutputInterface $output
      * @return int
      *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @todo spaghetti refactoring
      */
     protected function execute(InputInterface $input, OutputInterface $output): int

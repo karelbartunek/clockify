@@ -19,10 +19,10 @@ class Record
     private ?string $clockifyId = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_start = null;
+    private ?\DateTimeInterface $dateStart = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_end = null;
+    private ?\DateTimeInterface $dateEnd = null;
 
     #[ORM\ManyToOne(targetEntity: User::class, cascade: ["all"], fetch: "EAGER", inversedBy: 'records')]
     #[ORM\JoinColumn(name: 'userId', referencedColumnName: 'id')]
@@ -73,24 +73,24 @@ class Record
 
     public function getDateStart(): ?\DateTimeInterface
     {
-        return $this->date_start;
+        return $this->dateStart;
     }
 
-    public function setDateStart(\DateTimeInterface $date_start): self
+    public function setDateStart(\DateTimeInterface $dateStart): self
     {
-        $this->date_start = $date_start;
+        $this->dateStart = $dateStart;
 
         return $this;
     }
 
     public function getDateEnd(): ?\DateTimeInterface
     {
-        return $this->date_end;
+        return $this->dateEnd;
     }
 
-    public function setDateEnd(\DateTimeInterface $date_end): self
+    public function setDateEnd(\DateTimeInterface $dateEnd): self
     {
-        $this->date_end = $date_end;
+        $this->dateEnd = $dateEnd;
 
         return $this;
     }
