@@ -10,8 +10,7 @@ class ExportStructure
         array $records,
         DateTimeImmutable $from,
         bool $hasAlreadyExportedRecordsInDateRange = false
-    ): string
-    {
+    ): string {
         $content = '';
 
         if (!$hasAlreadyExportedRecordsInDateRange) {
