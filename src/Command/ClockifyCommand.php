@@ -28,6 +28,8 @@ class ClockifyCommand extends Command
      */
     private const KEYWORD_STAND_UP = 'Standup';
 
+    private const FILENAME = 'results.txt';
+
     private FetchWorkspaces $fetchWorkspaces;
     private FetchUsers $fetchUsers;
     private FetchTimeEntries $fetchTimeEntries;
@@ -109,7 +111,9 @@ class ClockifyCommand extends Command
             }
         }
 
-        $this->export->__invoke($from, $to);
+        $fileContent = $this->export->__invoke($from, $to);
+
+        file_put_contents(__DIR__ . '/../../var/' . self::FILENAME, $fileContent, FILE_APPEND);
 
         return Command::SUCCESS;
     }
